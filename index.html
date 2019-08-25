@@ -7,6 +7,32 @@
 <body>
 <div id="app">
     <h1> {{ title }} </h1>
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0)">Listar Contas</a></li>
+            <li><a href="javascript:void(0)">Adicionar Conta</a></li>
+        </ul>
+    </nav>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Vencimento</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Pagar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(o, index) in bills">
+            <td>{{ index+1 }}</td>
+            <td>{{ o.date_due }}</td>
+            <td>{{ o.name }}</td>
+            <td>{{ o.value }}</td>
+            <td>{{ o.done }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 <script type="text/javascript" src="node_modules/vue/dist/vue.min.js"></script>
